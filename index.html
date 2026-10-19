@@ -169,30 +169,7 @@ blockquote small{display:block;font-family:var(--mono);font-size:12px;color:var(
 .outro p:last-child{margin-bottom:0;color:var(--dim);font-size:15px}
 .outro a{color:var(--amber);border-bottom:1px solid rgba(224,169,78,.4)}
 
-/* ── projects: stage select ──────────────────────── */
-.stage{
-  border:1px solid var(--line);background:var(--panel);
-  display:grid;grid-template-columns:150px 1fr;
-  transition:border-color .2s;
-}
-.stage + .stage{margin-top:20px}
-.stage:hover{border-color:var(--red-soft)}
-.stage>.sthumb{grid-column:1/-1;width:100%;height:190px;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
-.stage-no{
-  border-right:1px solid var(--line);padding:26px 0;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-  background:repeating-linear-gradient(45deg,transparent 0 8px,rgba(236,231,242,.014) 8px 16px);
-}
-.stage-no .no{font-family:var(--mono);font-size:30px;color:var(--red);letter-spacing:2px}
-.stage-no .lbl{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:2px}
-.stage-no .live{font-family:var(--mono);font-size:10px;color:var(--amber);letter-spacing:1px;
-  border:1px solid rgba(224,169,78,.4);padding:3px 8px}
-.stage-body{padding:26px 30px 28px}
-.stage-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
-.stage-body h3{font-family:var(--serif);font-size:26px;letter-spacing:1px;font-weight:400}
-.stage-genre{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:1px}
-.stage-body .desc{color:var(--dim);margin:14px 0 4px;max-width:680px}
-.stage-body .desc b{color:var(--text);font-weight:600}
+/* ── projects: uniform 2-col grid ─────────────── */
 .learn{
   margin-top:12px;font-size:14.5px;color:var(--text);
   padding:10px 14px;background:rgba(230,67,63,.06);border:1px dashed rgba(230,67,63,.3);
@@ -212,11 +189,14 @@ blockquote small{display:block;font-family:var(--mono);font-size:12px;color:var(
 .plink:hover{border-color:var(--red-soft);color:var(--red);background:rgba(230,67,63,.08)}
 .plink.empty{border-style:dashed;opacity:.38;pointer-events:none}
 
+.minor-card .desc{color:var(--dim);font-size:14.5px;margin:2px 0 4px}
+.minor-card .desc b{color:var(--text);font-weight:600}
+.sbadge{font-family:var(--mono);font-size:9px;color:var(--red);letter-spacing:1px;border:1px solid rgba(230,67,63,.45);padding:2px 6px;margin-left:6px;vertical-align:2px;white-space:nowrap}
 /* minor thumbnails */
 .minor-card .thumb{display:block;width:calc(100% + 48px);height:150px;object-fit:cover;margin:-22px -24px 18px;border-bottom:1px solid var(--line)}
 
 /* minor stages */
-.minor{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+.minor{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px}
 .minor-card{border:1px solid var(--line);background:var(--panel);padding:22px 24px;transition:border-color .2s}
 .minor-card:hover{border-color:var(--red-soft)}
 .minor-top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
@@ -251,8 +231,6 @@ footer .fnote a{color:var(--amber);border-bottom:1px solid rgba(224,169,78,.4)}
 /* ── responsive ──────────────────────────────────── */
 @media (max-width:860px){
   .resume-grid{grid-template-columns:1fr;gap:48px}
-  .stage{grid-template-columns:1fr}
-  .stage-no{flex-direction:row;border-right:none;border-bottom:1px solid var(--line);padding:14px 20px;justify-content:flex-start}
   .minor{grid-template-columns:1fr}
   .nav-links a b{display:none}
   .f-grid{grid-template-columns:1fr}
@@ -295,7 +273,7 @@ footer .fnote a{color:var(--amber);border-bottom:1px solid rgba(224,169,78,.4)}
       구조를 먼저 설계하고 플레이 테스트로 다듬는 개발 방식으로 완성도를 높여갑니다.
     </p>
     <div class="cta reveal">
-      <a class="btn pri" href="/cdn-cgi/l/email-protection#f39d9984c0c7c6cbb3949e929a9fdd909c9e"><span class="__cf_email__" data-cfemail="107e7a672324252850777d71797c3e737f7d">[email&#160;protected]</span></a>
+      <a class="btn pri" href="/cdn-cgi/l/email-protection#711f1b064245444931161c10181d5f121e1c"><span class="__cf_email__" data-cfemail="cea0a4b9fdfafbf68ea9a3afa7a2e0ada1a3">[email&#160;protected]</span></a>
       <a class="btn" href="https://github.com/NaJungWon" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://www.notion.so/Unity-2d74d365888f806daec7f2226b332938" target="_blank" rel="noopener">Notion 기술노트</a>
     </div>
@@ -399,26 +377,18 @@ footer .fnote a{color:var(--amber);border-bottom:1px solid rgba(224,169,78,.4)}
       </div>
 
       <!-- STAGE 01 시장에 가면 -->
-      <article class="stage reveal">
-                <img class="sthumb" src="assets/sijang.png" alt="시장에 가면 인게임 화면" onerror="this.style.display='none'">
-                <img class="sthumb" src="assets/katana.png" alt="카타나 제로 모작 인게임 화면" onerror="this.style.display='none'">
-        <div class="stage-no">
-          <span class="no">01</span>
-          <span class="lbl">STAGE</span>
-          <span class="live">CO-OP</span>
-        </div>
-        <div class="stage-body">
-          <div class="stage-top">
-            <h3>시장에 가면</h3>
-            <span class="stage-genre">PC · 3D · 멀티 · 마피아 · 2026.08 – 2026.09 — 디벨로켓 연수 과정</span>
-            <span class="proj-links"><a class="plink empty" href="#" title="유튜브 시연 영상 링크를 여기에 연결" aria-label="시장에 가면 유튜브 - 링크 미연결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a class="plink empty" href="#" title="GitHub 저장소 링크를 여기에 연결" aria-label="시장에 가면 GitHub - 링크 미연결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.108-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></span>
-          </div>
-          <p class="desc">
-            '시장에 가면' 게임과 마피아 게임을 합친 3D 멀티 게임입니다.
-            <b>서버를 포함해 3D 공간에서의 플레이어 간 상호작용, 지목/투표 시스템, 마트 UI</b>를 담당했습니다.
-            여러 클라이언트가 하나의 게임 상태를 공유해야 하는 만큼, 어떤 데이터를 누가 권한을 가지고
-            처리할지 기준을 먼저 정하고 기능을 구현했습니다.
-          </p>
+      
+
+      <!-- STAGE 02 카타나 제로 모작 -->
+      
+
+      <!-- 대학 프로젝트 -->
+      <div class="minor">
+        <div class="minor-card reveal">
+          <img class="thumb" src="assets/sijang.png" alt="시장에 가면 인게임 화면" onerror="this.style.display='none'">
+          <div class="minor-top"><h3>시장에 가면 <span class="sbadge">STAGE 01 · CO-OP</span></h3><span class="proj-links"><a class="plink empty" href="#" title="유튜브 시연 영상 링크를 여기에 연결" aria-label="시장에 가면 유튜브 - 링크 미연결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a class="plink empty" href="#" title="GitHub 저장소 링크를 여기에 연결" aria-label="시장에 가면 GitHub - 링크 미연결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.108-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></span></div>
+          <div class="g">PC · 3D · 멀티 · 마피아 · 2026.08 – 2026.09 — 디벨로켓 연수 과정</div>
+          <p class="desc"> '시장에 가면' 게임과 마피아 게임을 합친 3D 멀티 게임입니다. <b>서버를 포함해 3D 공간에서의 플레이어 간 상호작용, 지목/투표 시스템, 마트 UI</b>를 담당했습니다. 여러 클라이언트가 하나의 게임 상태를 공유해야 하는 만큼, 어떤 데이터를 누가 권한을 가지고 처리할지 기준을 먼저 정하고 기능을 구현했습니다. </p>
           <p class="learn">
             WebSocket 기반 실시간 동기화를 직접 구현하며 서버-클라이언트 역할 분리와 네트워크 관점의 게임 로직 설계를 배웠습니다.
           </p>
@@ -426,26 +396,11 @@ footer .fnote a{color:var(--amber);border-bottom:1px solid rgba(224,169,78,.4)}
             <span class="tagc">Unity</span><span class="tagc">C#</span><span class="tagc">WebSocket</span><span class="tagc">멀티플레이</span><span class="tagc">서버/클라이언트</span>
           </div>
         </div>
-      </article>
-
-      <!-- STAGE 02 카타나 제로 모작 -->
-      <article class="stage reveal">
-        <div class="stage-no">
-          <span class="no">02</span>
-          <span class="lbl">STAGE</span>
-          <span class="live">SOLO</span>
-        </div>
-        <div class="stage-body">
-          <div class="stage-top">
-            <h3>카타나 제로 모작</h3>
-            <span class="stage-genre">PC · 2D · 네오 느와르 액션 플랫폼 · 핵 앤 슬래시 — 디벨로켓 연수 과정</span>
-            <span class="proj-links"><a class="plink empty" href="#" title="유튜브 시연 영상 링크를 여기에 연결" aria-label="카타나 제로 모작 유튜브 - 링크 미연결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a class="plink empty" href="#" title="GitHub 저장소 링크를 여기에 연결" aria-label="카타나 제로 모작 GitHub - 링크 미연결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.108-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></span>
-          </div>
-          <p class="desc">
-            핵 앤 슬래시에 맞는 <b>캐릭터 이동과 전투 시스템, 몬스터 AI</b>를 작성했고,
-            게임의 핵심 시스템인 <b>시간 느려짐 시스템과 재생/역재생 시스템</b>을 제작했습니다.
-            짧은 개발 기간 안에 원작의 조작감을 재현하는 우선순위를 스스로 정의하고 구현했습니다.
-          </p>
+        <div class="minor-card reveal">
+          <img class="thumb" src="assets/katana.png" alt="카타나 제로 모작 인게임 화면" onerror="this.style.display='none'">
+          <div class="minor-top"><h3>카타나 제로 모작 <span class="sbadge">STAGE 02 · SOLO</span></h3><span class="proj-links"><a class="plink empty" href="#" title="유튜브 시연 영상 링크를 여기에 연결" aria-label="카타나 제로 모작 유튜브 - 링크 미연결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a class="plink empty" href="#" title="GitHub 저장소 링크를 여기에 연결" aria-label="카타나 제로 모작 GitHub - 링크 미연결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.108-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></span></div>
+          <div class="g">PC · 2D · 네오 느와르 액션 플랫폼 · 핵 앤 슬래시 — 디벨로켓 연수 과정</div>
+          <p class="desc"> 핵 앤 슬래시에 맞는 <b>캐릭터 이동과 전투 시스템, 몬스터 AI</b>를 작성했고, 게임의 핵심 시스템인 <b>시간 느려짐 시스템과 재생/역재생 시스템</b>을 제작했습니다. 짧은 개발 기간 안에 원작의 조작감을 재현하는 우선순위를 스스로 정의하고 구현했습니다. </p>
           <p class="learn">
             Rigidbody를 Kinematic으로 설정해 물리를 직접 제어하며, 입력에 즉각 반응하는 조작감을 만드는 물리 설정 방법을 배웠습니다.
           </p>
@@ -453,10 +408,6 @@ footer .fnote a{color:var(--amber);border-bottom:1px solid rgba(224,169,78,.4)}
             <span class="tagc">Unity</span><span class="tagc">C#</span><span class="tagc">Kinematic 물리 제어</span><span class="tagc">몬스터 AI</span><span class="tagc">시간 제어 시스템</span>
           </div>
         </div>
-      </article>
-
-      <!-- 대학 프로젝트 -->
-      <div class="minor">
         <div class="minor-card reveal">
           <img class="thumb" src="assets/inv.png" onerror="this.style.display='none'" alt="Inventory Player 인게임 화면"><div class="minor-top"><h3>Inventory Player</h3><span class="proj-links"><a class="plink" href="https://youtu.be/irNj6mxdZbU" target="_blank" rel="noopener" title="유튜브 시연 영상 보기" aria-label="Inventory Player 유튜브"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a class="plink" href="https://github.com/NaJungWon/Inventory_Player" target="_blank" rel="noopener" title="GitHub 저장소 열기" aria-label="Inventory Player GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.108-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></span><span class="d">2025.09 – 2025.12</span></div>
           <div class="g">모바일 캐주얼 · 2D · 인벤토리 퍼즐 · 로그라이크</div>
@@ -533,11 +484,11 @@ footer .fnote a{color:var(--amber);border-bottom:1px solid rgba(224,169,78,.4)}
           <h2>함께할 준비가 되어 있습니다</h2>
           <p class="fnote">
             프로젝트의 구현 과정, 시행착오와 해결 기록은 GitHub 저장소와 Notion 기술 노트로 관리하고 있습니다.
-            기술 관련 대화는 언제나 환영합니다 — <a href="/cdn-cgi/l/email-protection#d0bebaa7e3e4e5e890b7bdb1b9bcfeb3bfbd"><span class="__cf_email__" data-cfemail="7d13170a4e4948453d1a101c1411531e1210">[email&#160;protected]</span></a>
+            기술 관련 대화는 언제나 환영합니다 — <a href="/cdn-cgi/l/email-protection#2846425f1b1c1d10684f45494144064b4745"><span class="__cf_email__" data-cfemail="d2bcb8a5e1e6e7ea92b5bfb3bbbefcb1bdbf">[email&#160;protected]</span></a>
           </p>
         </div>
         <div class="f-links reveal">
-          <a href="/cdn-cgi/l/email-protection#650b0f125651505d250208040c094b060a08">EMAIL <span><span class="__cf_email__" data-cfemail="a8c6c2df9b9c9d90e8cfc5c9c1c486cbc7c5">[email&#160;protected]</span></span></a>
+          <a href="/cdn-cgi/l/email-protection#37595d400403020f77505a565e5b1954585a">EMAIL <span><span class="__cf_email__" data-cfemail="2c42465b1f1819146c4b414d4540024f4341">[email&#160;protected]</span></span></a>
           <a href="https://github.com/NaJungWon" target="_blank" rel="noopener">GITHUB <span>github.com/NaJungWon</span></a>
           <a href="https://www.notion.so/Unity-2d74d365888f806daec7f2226b332938" target="_blank" rel="noopener">NOTION <span>Unity 기술 노트</span></a>
           <a href="tel:01064913458">PHONE <span>010-6491-3458</span></a>
